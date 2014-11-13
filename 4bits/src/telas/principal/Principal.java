@@ -7,8 +7,17 @@ package telas.principal;
                  
 import Classes.ClassePrincipal;
 import Classes.FuncionarioLogado;
+import com.towel.swing.img.JImagePanel;
 import imagens.fundos.ImagemPrincipal;
+import java.awt.Dimension;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.JDesktopPane;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JToolBar;
@@ -64,7 +73,21 @@ public class Principal extends javax.swing.JFrame {
 
     public Principal() {
         initComponents();
-         
+         JImagePanel panel = null;
+        try {
+            panel = new JImagePanel(
+                    loadImage("C:\\Users\\felip_000\\Desktop\\logo spimflex fundo verde.png"));
+        } catch (IOException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+ 
+        JFrame frame = new JFrame();
+        AreaPrincipal.setPreferredSize(new Dimension(100, 100));
+        AreaPrincipal.add(panel);
+        frame.pack();
+        frame.setLocationRelativeTo(null);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
         //AreaPrincipal.setBorder(new ImagemPrincipal());
         //this.setExtendedState(Principal.MAXIMIZED_BOTH);
         AreaPrincipal.add(cadastrarCliente);
@@ -107,6 +130,7 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
+        actionListenerManager1 = new com.towel.awt.ActionListenerManager();
         jPanel1 = new javax.swing.JPanel();
         AreaPrincipal = new javax.swing.JDesktopPane();
         PainelMenu = new javax.swing.JPanel();
@@ -151,17 +175,6 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         AreaPrincipal.setBackground(new java.awt.Color(204, 204, 255));
-
-        javax.swing.GroupLayout AreaPrincipalLayout = new javax.swing.GroupLayout(AreaPrincipal);
-        AreaPrincipal.setLayout(AreaPrincipalLayout);
-        AreaPrincipalLayout.setHorizontalGroup(
-            AreaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        AreaPrincipalLayout.setVerticalGroup(
-            AreaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 414, Short.MAX_VALUE)
-        );
 
         PainelMenu.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -323,21 +336,19 @@ public class Principal extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(pBoasVindas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(10, 10, 10)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PainelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(AreaPrincipal))
-                .addContainerGap())
+                    .addComponent(AreaPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 880, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(pBoasVindas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(6, 6, 6)
                 .addComponent(PainelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(AreaPrincipal)
-                .addGap(10, 10, 10))
+                .addGap(6, 6, 6)
+                .addComponent(AreaPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         Menu.setBackground(new java.awt.Color(255, 255, 255));
@@ -476,6 +487,7 @@ public class Principal extends javax.swing.JFrame {
     public javax.swing.JToolBar.Separator Separador3;
     public javax.swing.JButton SupAtendimento;
     public javax.swing.JButton SupRelLigaçoes;
+    public com.towel.awt.ActionListenerManager actionListenerManager1;
     public javax.swing.JDesktopPane jDesktopPane1;
     public javax.swing.JMenu jMenu3;
     public javax.swing.JPanel jPanel1;
@@ -487,7 +499,10 @@ public class Principal extends javax.swing.JFrame {
     public javax.swing.JMenuItem mlogout;
     public javax.swing.JPanel pBoasVindas;
     // End of variables declaration//GEN-END:variables
- 
+
+     public static BufferedImage loadImage(String file) throws IOException {
+        return ImageIO.read(new File(file));
+    }
 
  
     }
