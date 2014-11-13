@@ -6,7 +6,6 @@
 
 package Classes;
 
-import imagens.fundos.ImagemPrincipal;
 import telas.atendimento.PesquisarClientes;
 import telas.principal.Login;
 import telas.principal.Principal;

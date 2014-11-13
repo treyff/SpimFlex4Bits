@@ -14,7 +14,7 @@ public class ImagemPrincipal implements Border{
  
     public ImagemPrincipal(){
         try {
-            URL imagePath = new URL(getClass().getResource("../imagens.fundos/fundo.jpg").toString()); // Felipe aqui aonde esta Fundo.png fica a imagem...eu criei uma pasta chamada Imagens e coloquei tudo dentro do projeto 
+            URL imagePath = new URL(getClass().getResource("/imagens.fundos/fundo.jpg").toString()); // Felipe aqui aonde esta Fundo.png fica a imagem...eu criei uma pasta chamada Imagens e coloquei tudo dentro do projeto 
             fundo = ImageIO.read(imagePath);// A imagem que eu coloquei tem 1600x800 porque a tela ja esta abrindo assim, faz o teste ai e depois me fala.
         } catch (IOException ex) {            
         }
