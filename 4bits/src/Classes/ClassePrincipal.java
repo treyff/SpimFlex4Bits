@@ -6,6 +6,7 @@
 
 package Classes;
 
+import imagens.fundos.ImagemPrincipal;
 import telas.atendimento.PesquisarClientes;
 import telas.principal.Login;
 import telas.principal.Principal;
@@ -23,6 +24,7 @@ public class ClassePrincipal{
  public static AlterarCliente alt = new AlterarCliente();
  public static Endereco e = new Endereco();
  public static PesquisarClientes pesC = new PesquisarClientes();
+ 
 
  
   

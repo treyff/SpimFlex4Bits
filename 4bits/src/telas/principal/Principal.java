@@ -8,8 +8,14 @@ package telas.principal;
 import Classes.ClassePrincipal;
 import Classes.FuncionarioLogado;
 import com.towel.swing.img.JImagePanel;
+import imagens.fundos.BGDesktopPane;
 import imagens.fundos.ImagemPrincipal;
+import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -68,19 +74,12 @@ public class Principal extends javax.swing.JFrame {
     BlocoNotas blocoNotas = new BlocoNotas();
     Calculadora calculadora = new Calculadora();
     
-    
      
 
     public Principal() {
         initComponents();
-         JImagePanel panel = null;
-        try {
-            panel = new JImagePanel(
-                    loadImage("C:\\Users\\felip_000\\Desktop\\logo spimflex fundo verde.png"));
-        } catch (IOException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+       
+         
         
         //AreaPrincipal.setBorder(new ImagemPrincipal());
         //this.setExtendedState(Principal.MAXIMIZED_BOTH);
@@ -110,7 +109,7 @@ public class Principal extends javax.swing.JFrame {
         GestPesqFunc.setVisible(false);
         GestCrtlProdutos.setVisible(false);
         
-            
+             
     }
         
         FuncionarioLogado f = new FuncionarioLogado();
@@ -123,13 +122,10 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDesktopPane1 = new javax.swing.JDesktopPane();
-        actionListenerManager1 = new com.towel.awt.ActionListenerManager();
         jPanel1 = new javax.swing.JPanel();
-        AreaPrincipal = new javax.swing.JDesktopPane();
         PainelMenu = new javax.swing.JPanel();
         MenuCargos = new javax.swing.JToolBar();
-        Separador1 = new javax.swing.JToolBar.Separator();
+        jSeparator1 = new javax.swing.JToolBar.Separator();
         AtCadastrarCliente = new javax.swing.JButton();
         AtPesquisarClientes = new javax.swing.JButton();
         AtPesquisarProduto = new javax.swing.JButton();
@@ -144,6 +140,8 @@ public class Principal extends javax.swing.JFrame {
         pBoasVindas = new javax.swing.JPanel();
         LbMensagem = new javax.swing.JLabel();
         LinkNome = new javax.swing.JLabel();
+        AreaPrincipal = new javax.swing.JDesktopPane();
+        jPanel2 = new javax.swing.JPanel();
         Menu = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         mlogin = new javax.swing.JMenuItem();
@@ -152,32 +150,21 @@ public class Principal extends javax.swing.JFrame {
         mcalculadora = new javax.swing.JMenuItem();
         mBlocoNotas = new javax.swing.JMenuItem();
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Principal SpimFlex");
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(102, 255, 102));
 
-        AreaPrincipal.setBackground(new java.awt.Color(255, 255, 255));
+        PainelMenu.setBackground(new java.awt.Color(153, 255, 153));
+        PainelMenu.setAlignmentX(0.1F);
+        PainelMenu.setAlignmentY(0.1F);
 
-        PainelMenu.setBackground(new java.awt.Color(255, 255, 255));
-
-        MenuCargos.setBackground(new java.awt.Color(255, 255, 255));
-        MenuCargos.setFloatable(false);
+        MenuCargos.setBackground(new java.awt.Color(204, 255, 204));
+        MenuCargos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         MenuCargos.setRollover(true);
         MenuCargos.setBorderPainted(false);
         MenuCargos.setEnabled(false);
-        MenuCargos.add(Separador1);
+        MenuCargos.add(jSeparator1);
 
         AtCadastrarCliente.setBackground(new java.awt.Color(255, 255, 255));
         AtCadastrarCliente.setText("Cadastrar Clientes");
@@ -284,8 +271,8 @@ public class Principal extends javax.swing.JFrame {
             PainelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PainelMenuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(MenuCargos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addComponent(MenuCargos, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addContainerGap())
         );
         PainelMenuLayout.setVerticalGroup(
             PainelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -294,7 +281,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        pBoasVindas.setBackground(new java.awt.Color(255, 255, 255));
+        pBoasVindas.setBackground(new java.awt.Color(204, 204, 204));
 
         LbMensagem.setText("     Bem Vindo a SpimFlex:");
 
@@ -313,7 +300,7 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(LbMensagem)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LinkNome)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 699, Short.MAX_VALUE))
         );
         pBoasVindasLayout.setVerticalGroup(
             pBoasVindasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -324,18 +311,40 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(LinkNome)))
         );
 
+        AreaPrincipal.setBackground(new java.awt.Color(204, 204, 204));
+        AreaPrincipal.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(102, 255, 153), new java.awt.Color(102, 255, 153)));
+        AreaPrincipal.setOpaque(false);
+
+        javax.swing.GroupLayout AreaPrincipalLayout = new javax.swing.GroupLayout(AreaPrincipal);
+        AreaPrincipal.setLayout(AreaPrincipalLayout);
+        AreaPrincipalLayout.setHorizontalGroup(
+            AreaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        AreaPrincipalLayout.setVerticalGroup(
+            AreaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 421, Short.MAX_VALUE)
+        );
+
+        jPanel2.setOpaque(false);
+        jPanel2.setLayout(null);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(pBoasVindas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(PainelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(AreaPrincipal)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(PainelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(AreaPrincipal))
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(26, 26, 26)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 866, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -343,9 +352,14 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(pBoasVindas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
                 .addComponent(PainelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(AreaPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(AreaPrincipal)
+                .addGap(6, 6, 6))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(85, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap()))
         );
 
         Menu.setBackground(new java.awt.Color(255, 255, 255));
@@ -386,10 +400,10 @@ public class Principal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(916, 578));
+        setSize(new java.awt.Dimension(918, 578));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -479,15 +493,14 @@ public class Principal extends javax.swing.JFrame {
     public javax.swing.JMenuBar Menu;
     public javax.swing.JToolBar MenuCargos;
     public javax.swing.JPanel PainelMenu;
-    public javax.swing.JToolBar.Separator Separador1;
     public javax.swing.JToolBar.Separator Separador2;
     public javax.swing.JToolBar.Separator Separador3;
     public javax.swing.JButton SupAtendimento;
     public javax.swing.JButton SupRelLigaçoes;
-    public com.towel.awt.ActionListenerManager actionListenerManager1;
-    public javax.swing.JDesktopPane jDesktopPane1;
     public javax.swing.JMenu jMenu3;
     public javax.swing.JPanel jPanel1;
+    public javax.swing.JPanel jPanel2;
+    public javax.swing.JToolBar.Separator jSeparator1;
     public javax.swing.JToolBar.Separator jSeparator4;
     public javax.swing.JMenuItem mBlocoNotas;
     public javax.swing.JMenu mUtilitarios;
@@ -500,6 +513,8 @@ public class Principal extends javax.swing.JFrame {
      public static BufferedImage loadImage(String file) throws IOException {
         return ImageIO.read(new File(file));
     }
-
+   
+   }  
+  
  
-    }
+    

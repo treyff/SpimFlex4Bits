@@ -14,7 +14,7 @@ public class ImagemPrincipal implements Border{
  
     public ImagemPrincipal(){
         try {
-            URL imagePath = new URL(getClass().getResource("/imagens.fundos/fundo.jpg").toString()); // Felipe aqui aonde esta Fundo.png fica a imagem...eu criei uma pasta chamada Imagens e coloquei tudo dentro do projeto 
+            URL imagePath = new URL(getClass().getResource("C:\\Users\\felip_000\\Desktop\\background-artwork3.jpg").toString()); // Felipe aqui aonde esta Fundo.png fica a imagem...eu criei uma pasta chamada Imagens e coloquei tudo dentro do projeto 
             fundo = ImageIO.read(imagePath);// A imagem que eu coloquei tem 1600x800 porque a tela ja esta abrindo assim, faz o teste ai e depois me fala.
         } catch (IOException ex) {            
         }
@@ -32,15 +32,8 @@ public class ImagemPrincipal implements Border{
         return false;
     }
 
-    //@Override
-   // public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
-    //    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-   //}
-
-   // @Override
-   // public Insets getBorderInsets(Component c) {
-    //    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-   // }
+   
+   
     }
 
 

@@ -110,6 +110,11 @@ public class AlterarCliente extends javax.swing.JFrame {
         btCancelar.setText("Cancelar");
 
         btAlterar.setText("Alterar");
+        btAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAlterarActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Nome:");
 
@@ -301,6 +306,27 @@ public class AlterarCliente extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_btSalvarActionPerformed
+
+    private void btAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAlterarActionPerformed
+txtBairro.setEnabled(true);
+txtCel.setEnabled(true);
+txtCep.setEnabled(true);
+txtCidade.setEnabled(true);
+txtComp.setEnabled(true);
+txtEmail.setEnabled(true);
+txtNome.setEnabled(true);
+txtNumero.setEnabled(true);
+txtRua.setEnabled(true);
+txtSenha.setEnabled(true);
+txtTel.setEnabled(true);
+btSalvar.setEnabled(true);
+btCancelar.setEnabled(true);
+btSalvar.setVisible(true);
+btCancelar.setVisible(true);
+
+
+
+    }//GEN-LAST:event_btAlterarActionPerformed
 
     /**
      * @param args the command line arguments
