@@ -88,6 +88,7 @@ public class ClienteDAO {
     public void excluir(int cod_Cliente) {
         acesso = new DB();
         String cmdSQL = "DELETE FROM cliente WHERE CLIENTE_ID = " + cod_Cliente +";";
+        JOptionPane.showMessageDialog(null, "Cliente deletado com Sucesso!");
         try {
             acesso.getStmt().executeUpdate(cmdSQL);
         } catch (SQLException e) {

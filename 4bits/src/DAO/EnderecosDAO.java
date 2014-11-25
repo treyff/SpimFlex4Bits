@@ -70,7 +70,7 @@ public class EnderecosDAO {
     { int id =   ClassePrincipal.e.getId_end();
         acesso = new DB();
         String cmdSQL = "UPDATE endereco SET RUA='" + rua + "',NUMERO='" + numero + "',COMPLEMENTO='" + complemento +"',CEP='" + cep + "',BAIRRO='" + bairro + "',CIDADE='"
-                + cidade + "',UF='" + uf+"' where CLIENTE_ID = "+id;
+                + cidade + "',UF='" + uf+"' where END_ID = "+id+";";
         try {
             acesso.getStmt().executeUpdate(cmdSQL);
         } catch (SQLException e) {

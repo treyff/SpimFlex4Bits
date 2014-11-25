@@ -311,7 +311,7 @@ public class AlterarCliente extends javax.swing.JFrame {
             System.out.println("DEU MERDA AQUI! cadastrar Cliente");
         }
         
-        
+          
         try {
             //Utiliza o metodo inserir da classe DB para inserir os dados no banco
             

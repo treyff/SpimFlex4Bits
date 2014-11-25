@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package telas.principal;
-                 
+                   
 import Classes.ClassePrincipal;
 import Classes.FuncionarioLogado;
 import com.towel.swing.img.JImagePanel;
