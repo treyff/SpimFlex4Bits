@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package telas.principal;
-                   
+                    
 import Classes.ClassePrincipal;
 import Classes.FuncionarioLogado;
 import com.towel.swing.img.JImagePanel;
@@ -168,6 +168,7 @@ public class Principal extends javax.swing.JFrame {
         MenuCargos.add(jSeparator1);
 
         AtCadastrarCliente.setBackground(new java.awt.Color(255, 255, 255));
+        AtCadastrarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/pessoa.png"))); // NOI18N
         AtCadastrarCliente.setText("Cadastrar Clientes");
         AtCadastrarCliente.setFocusable(false);
         AtCadastrarCliente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -285,8 +286,8 @@ public class Principal extends javax.swing.JFrame {
         );
         PainelMenuLayout.setVerticalGroup(
             PainelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelMenuLayout.createSequentialGroup()
-                .addComponent(MenuCargos, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(PainelMenuLayout.createSequentialGroup()
+                .addComponent(MenuCargos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -332,7 +333,7 @@ public class Principal extends javax.swing.JFrame {
         );
         AreaPrincipalLayout.setVerticalGroup(
             AreaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 421, Short.MAX_VALUE)
+            .addGap(0, 364, Short.MAX_VALUE)
         );
 
         jPanel2.setOpaque(false);
@@ -350,7 +351,7 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(AreaPrincipal))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                     .addGap(26, 26, 26)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 866, Short.MAX_VALUE)
                     .addContainerGap()))
@@ -366,8 +367,8 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(6, 6, 6))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addContainerGap(85, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(131, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap()))
         );
 
