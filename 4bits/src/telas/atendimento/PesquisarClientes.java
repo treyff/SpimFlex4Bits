@@ -82,6 +82,7 @@ public class PesquisarClientes extends javax.swing.JInternalFrame {
         txtAltEnd = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         btnAlt = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         jInternalFrame1.setVisible(true);
 
@@ -240,10 +241,17 @@ public class PesquisarClientes extends javax.swing.JInternalFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        btnAlt.setText("Alterar Cliente");
+        btnAlt.setText("Visualizar/Alterar/Deletar Dados");
         btnAlt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAltActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("Copiar no Atendimento");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
             }
         });
 
@@ -257,7 +265,9 @@ public class PesquisarClientes extends javax.swing.JInternalFrame {
                     .addGroup(painelPesquisarLayout.createSequentialGroup()
                         .addComponent(PeinelAlt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnAlt))
+                        .addGroup(painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnAlt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(tabelaroll, javax.swing.GroupLayout.DEFAULT_SIZE, 561, Short.MAX_VALUE)
                     .addGroup(painelPesquisarLayout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -284,7 +294,10 @@ public class PesquisarClientes extends javax.swing.JInternalFrame {
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(PeinelAlt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnAlt))
+                    .addGroup(painelPesquisarLayout.createSequentialGroup()
+                        .addComponent(jButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnAlt)))
                 .addContainerGap())
         );
 
@@ -362,6 +375,7 @@ public class PesquisarClientes extends javax.swing.JInternalFrame {
                 ResultSet rs = stm.executeQuery()) {
 
             while (rs.next()) {
+                int id = rs.getInt("END_ID");
                 String rua = rs.getString("RUA");
                 String numero = rs.getString("NUMERO");
                 String complemento = rs.getString("COMPLEMENTO");
@@ -371,6 +385,7 @@ public class PesquisarClientes extends javax.swing.JInternalFrame {
                 String cep = rs.getString("CEP");
                 
                 
+                ClassePrincipal.e.setId_end(id);
                 ClassePrincipal.e.setRua(rua);
                 ClassePrincipal.e.setNumero(numero);
                 ClassePrincipal.e.setComplemento(complemento);
@@ -401,12 +416,51 @@ public class PesquisarClientes extends javax.swing.JInternalFrame {
                 ClassePrincipal.alt.setVisible(true);
     }//GEN-LAST:event_btnAltActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+ int criterio;
+        Conexao x = new Conexao();
+        criterio = ClassePrincipal.c.getEndereco_end_id();
+        String sql = "select * from mydb.endereco where END_ID=" + criterio + ";";
+        Connection conexao = x.Conectar();
+        
+        try (PreparedStatement stm = conexao.prepareStatement(sql);
+                ResultSet rs = stm.executeQuery()) {
+
+            while (rs.next()) {
+                String rua = rs.getString("RUA");
+                String numero = rs.getString("NUMERO");
+                String complemento = rs.getString("COMPLEMENTO");
+                String bairro = rs.getString("BAIRRO");
+                String cidade = rs.getString("CIDADE");
+                String uf = rs.getString("UF");
+                String cep = rs.getString("CEP");
+                
+                
+                ClassePrincipal.e.setRua(rua);
+                ClassePrincipal.e.setNumero(numero);
+                ClassePrincipal.e.setComplemento(complemento);
+                ClassePrincipal.e.setBairro(bairro);
+                ClassePrincipal.e.setCidade(cidade);
+                ClassePrincipal.e.setUf(uf);
+                ClassePrincipal.e.setCep(cep);
+                
+            }
+            
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+        
+        
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PeinelAlt;
     private javax.swing.JButton btnAlt;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

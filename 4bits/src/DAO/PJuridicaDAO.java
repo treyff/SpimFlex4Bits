@@ -33,8 +33,7 @@ throws ParseException, SQLException {
          
 try {
             acesso.getStmt().executeUpdate(fisica);
-            JOptionPane.showMessageDialog(null, "Cadastro fisico efetuado com sucesso!!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
-
+            
         } catch (SQLException e) {
             acesso.show("Erro SQL :" + e.getMessage());
             System.out.println("Erro: " + e.getMessage());

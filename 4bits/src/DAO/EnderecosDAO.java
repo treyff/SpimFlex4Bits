@@ -5,6 +5,7 @@
 package DAO;
 
 
+import Classes.ClassePrincipal;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -66,10 +67,10 @@ public class EnderecosDAO {
            ) 
     throws ParseException {
       
-    {
+    { int id =   ClassePrincipal.e.getId_end();
         acesso = new DB();
-        String cmdSQL = "UPDATE contatos SET RUA='" + rua + "',NUMERO='" + numero + "',COMPLEMENTO='" + complemento +"',CEP='" + cep + "',BAIRRO='" + bairro + "',CIDADE='"
-                + cidade + "',UF='" + uf+";";
+        String cmdSQL = "UPDATE endereco SET RUA='" + rua + "',NUMERO='" + numero + "',COMPLEMENTO='" + complemento +"',CEP='" + cep + "',BAIRRO='" + bairro + "',CIDADE='"
+                + cidade + "',UF='" + uf+"' where CLIENTE_ID = "+id;
         try {
             acesso.getStmt().executeUpdate(cmdSQL);
         } catch (SQLException e) {
@@ -91,7 +92,7 @@ public class EnderecosDAO {
 
     public void excluir(int cod_Cliente) {
         acesso = new DB();
-        String cmdSQL = "DELETE FROM endereco WHERE ENDERECO_ID = " + cod_Cliente;
+        String cmdSQL = "DELETE FROM endereco WHERE END_ID = " + cod_Cliente;
         try {
             acesso.getStmt().executeUpdate(cmdSQL);
         } catch (SQLException e) {

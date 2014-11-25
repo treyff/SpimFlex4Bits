@@ -72,6 +72,7 @@ public class ClienteDAO {
                 + email + "',senha='" + senha+ "'where CLIENTE_ID = "+id;
         try {
             acesso.getStmt().executeUpdate(cmdSQL);
+            JOptionPane.showMessageDialog(null,"Cliente Alterado com Sucesso!");
         } catch (SQLException e) {
             acesso.show("Erro SQL :" + e.getMessage());
             System.out.println("Erro SQL: " + e.getMessage());
@@ -86,7 +87,7 @@ public class ClienteDAO {
     
     public void excluir(int cod_Cliente) {
         acesso = new DB();
-        String cmdSQL = "DELETE FROM cliente WHERE codigo = " + cod_Cliente +";";
+        String cmdSQL = "DELETE FROM cliente WHERE CLIENTE_ID = " + cod_Cliente +";";
         try {
             acesso.getStmt().executeUpdate(cmdSQL);
         } catch (SQLException e) {

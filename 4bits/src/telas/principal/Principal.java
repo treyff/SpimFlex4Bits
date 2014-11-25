@@ -78,8 +78,8 @@ public class Principal extends javax.swing.JFrame {
 
     public Principal() {
         initComponents();
-       
          
+            
         
         //AreaPrincipal.setBorder(new ImagemPrincipal());
         //this.setExtendedState(Principal.MAXIMIZED_BOTH);
@@ -108,7 +108,7 @@ public class Principal extends javax.swing.JFrame {
         GestCadastroFunc.setVisible(false);
         GestPesqFunc.setVisible(false);
         GestCrtlProdutos.setVisible(false);
-        
+             
              
     }
         
@@ -164,12 +164,14 @@ public class Principal extends javax.swing.JFrame {
         MenuCargos.setRollover(true);
         MenuCargos.setBorderPainted(false);
         MenuCargos.setEnabled(false);
+        MenuCargos.setOpaque(false);
         MenuCargos.add(jSeparator1);
 
         AtCadastrarCliente.setBackground(new java.awt.Color(255, 255, 255));
         AtCadastrarCliente.setText("Cadastrar Clientes");
         AtCadastrarCliente.setFocusable(false);
         AtCadastrarCliente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        AtCadastrarCliente.setOpaque(false);
         AtCadastrarCliente.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         AtCadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -182,6 +184,7 @@ public class Principal extends javax.swing.JFrame {
         AtPesquisarClientes.setText("Pesquisar Clientes");
         AtPesquisarClientes.setFocusable(false);
         AtPesquisarClientes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        AtPesquisarClientes.setOpaque(false);
         AtPesquisarClientes.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         AtPesquisarClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -194,6 +197,7 @@ public class Principal extends javax.swing.JFrame {
         AtPesquisarProduto.setText("Pesquisar Produtos");
         AtPesquisarProduto.setFocusable(false);
         AtPesquisarProduto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        AtPesquisarProduto.setOpaque(false);
         AtPesquisarProduto.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         AtPesquisarProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -207,6 +211,7 @@ public class Principal extends javax.swing.JFrame {
         SupRelLigaçoes.setText("Relatório de Ligações");
         SupRelLigaçoes.setFocusable(false);
         SupRelLigaçoes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SupRelLigaçoes.setOpaque(false);
         SupRelLigaçoes.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         SupRelLigaçoes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -219,6 +224,7 @@ public class Principal extends javax.swing.JFrame {
         SupAtendimento.setText("Painel de Atendimento");
         SupAtendimento.setFocusable(false);
         SupAtendimento.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SupAtendimento.setOpaque(false);
         SupAtendimento.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         SupAtendimento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -231,6 +237,7 @@ public class Principal extends javax.swing.JFrame {
         GestPesqFunc.setText("Pesquisar Funcionario");
         GestPesqFunc.setFocusable(false);
         GestPesqFunc.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        GestPesqFunc.setOpaque(false);
         GestPesqFunc.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         GestPesqFunc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -244,6 +251,7 @@ public class Principal extends javax.swing.JFrame {
         GestCadastroFunc.setText("Cadastrar Funcionario");
         GestCadastroFunc.setFocusable(false);
         GestCadastroFunc.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        GestCadastroFunc.setOpaque(false);
         GestCadastroFunc.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         GestCadastroFunc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -256,6 +264,7 @@ public class Principal extends javax.swing.JFrame {
         GestCrtlProdutos.setText("Cadastrar Produtos");
         GestCrtlProdutos.setFocusable(false);
         GestCrtlProdutos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        GestCrtlProdutos.setOpaque(false);
         GestCrtlProdutos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         GestCrtlProdutos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -281,7 +290,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        pBoasVindas.setBackground(new java.awt.Color(204, 204, 204));
+        pBoasVindas.setBackground(new java.awt.Color(204, 255, 204));
 
         LbMensagem.setText("     Bem Vindo a SpimFlex:");
 
@@ -319,7 +328,7 @@ public class Principal extends javax.swing.JFrame {
         AreaPrincipal.setLayout(AreaPrincipalLayout);
         AreaPrincipalLayout.setHorizontalGroup(
             AreaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 878, Short.MAX_VALUE)
         );
         AreaPrincipalLayout.setVerticalGroup(
             AreaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

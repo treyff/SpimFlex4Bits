@@ -11,6 +11,15 @@ package Classes;
  * @author felip_000
  */
 public class Endereco {
+    int id_end;
+
+    public int getId_end() {
+        return id_end;
+    }
+
+    public void setId_end(int id_end) {
+        this.id_end = id_end;
+    }
     String rua;
     String numero;
     String complemento;

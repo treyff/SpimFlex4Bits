@@ -47,7 +47,6 @@ public class Login extends javax.swing.JFrame {
         txtLogin = new javax.swing.JTextField();
         txtSenha = new javax.swing.JPasswordField();
         btAcessar = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
 
         setTitle("Login SpimFlex");
 
@@ -78,10 +77,6 @@ public class Login extends javax.swing.JFrame {
         });
         jPanel1.add(btAcessar);
         btAcessar.setBounds(93, 157, 71, 23);
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundos/fundo.png"))); // NOI18N
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(0, 0, 280, 230);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -281,7 +276,6 @@ this.dispose();
     private javax.swing.JButton btAcessar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtLogin;
     private javax.swing.JPasswordField txtSenha;

@@ -73,7 +73,10 @@
                       <Group type="102" attributes="0">
                           <Component id="PeinelAlt" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnAlt" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="btnAlt" max="32767" attributes="0"/>
+                              <Component id="jButton3" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                       <Component id="tabelaroll" pref="561" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
@@ -108,7 +111,11 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="PeinelAlt" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="btnAlt" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnAlt" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
               </Group>
@@ -324,10 +331,18 @@
         </Container>
         <Component class="javax.swing.JButton" name="btnAlt">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Alterar Cliente"/>
+            <Property name="text" type="java.lang.String" value="Visualizar/Alterar/Deletar Dados"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAltActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Copiar no Atendimento"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
