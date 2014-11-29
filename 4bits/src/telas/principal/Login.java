@@ -14,6 +14,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.JToolBar;
+import telas.atendimento.Ligações;
 
 /**
  *
@@ -119,7 +120,7 @@ public class Login extends javax.swing.JFrame {
                
 
                 ClassePrincipal.p = new Principal();
-            
+                ClassePrincipal.a = new Ligações();
                 
                 
                 ClassePrincipal.p.LinkNome.setText(ClassePrincipal.f.getNome());
@@ -136,7 +137,10 @@ public class Login extends javax.swing.JFrame {
                     ClassePrincipal.p.GestPesqFunc.setVisible(false);
                     ClassePrincipal.p.GestCrtlProdutos.setVisible(false);
                     ClassePrincipal.p.ligações.setVisible(true);
-
+                    ClassePrincipal.p.ligações.btnFecha.setVisible(false);
+                    ClassePrincipal.p.Separador2.setVisible(false);
+                    ClassePrincipal.p.Separador3.setVisible(false);
+                    
                 }
                 if (ClassePrincipal.f.getNivel() == 2) {
 

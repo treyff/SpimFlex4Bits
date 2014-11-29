@@ -82,7 +82,6 @@ public class CadastrarFuncionarios extends javax.swing.JInternalFrame {
         cbEstado = new javax.swing.JComboBox();
         txtCep = Formato.getCep();
         jLabel22 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -95,7 +94,7 @@ public class CadastrarFuncionarios extends javax.swing.JInternalFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         setTitle("Cadastro de Funcionarios");
 
-        PainelFunc.setBackground(new java.awt.Color(255, 255, 255));
+        PainelFunc.setBackground(new java.awt.Color(204, 255, 204));
 
         jLabel13.setText("CTPS:");
 
@@ -136,10 +135,12 @@ public class CadastrarFuncionarios extends javax.swing.JInternalFrame {
 
         Logo1.setText("Cadastro de Clientes");
 
-        PainelBotao.setBackground(new java.awt.Color(255, 255, 255));
+        PainelBotao.setBackground(new java.awt.Color(204, 255, 204));
 
+        jButton2.setBackground(new java.awt.Color(102, 255, 102));
         jButton2.setText("Novo");
 
+        jButton3.setBackground(new java.awt.Color(102, 255, 102));
         jButton3.setText("Cadastrar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,6 +148,7 @@ public class CadastrarFuncionarios extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton4.setBackground(new java.awt.Color(102, 255, 102));
         jButton4.setText("Alterar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,10 +156,13 @@ public class CadastrarFuncionarios extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton5.setBackground(new java.awt.Color(102, 255, 102));
         jButton5.setText("Cancelar");
 
+        jButton6.setBackground(new java.awt.Color(102, 255, 102));
         jButton6.setText("Pesquisar");
 
+        jButton7.setBackground(new java.awt.Color(102, 255, 102));
         jButton7.setText("Relatório");
 
         javax.swing.GroupLayout PainelBotaoLayout = new javax.swing.GroupLayout(PainelBotao);
@@ -190,7 +195,7 @@ public class CadastrarFuncionarios extends javax.swing.JInternalFrame {
                 .addComponent(jButton7))
         );
 
-        PainelEnd.setBackground(new java.awt.Color(255, 255, 255));
+        PainelEnd.setBackground(new java.awt.Color(204, 255, 204));
 
         jLabel23.setText("Endereço");
 
@@ -293,26 +298,14 @@ public class CadastrarFuncionarios extends javax.swing.JInternalFrame {
                     .addContainerGap(26, Short.MAX_VALUE)))
         );
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(204, 255, 204));
 
         jLabel1.setText("Foto:");
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        jButton1.setBackground(new java.awt.Color(102, 255, 102));
         jButton1.setText("Carregar Foto");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -348,7 +341,6 @@ public class CadastrarFuncionarios extends javax.swing.JInternalFrame {
         PainelFunc.setLayout(PainelFuncLayout);
         PainelFuncLayout.setHorizontalGroup(
             PainelFuncLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(PainelFuncLayout.createSequentialGroup()
                 .addGap(107, 107, 107)
                 .addComponent(PainelBotao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -419,8 +411,6 @@ public class CadastrarFuncionarios extends javax.swing.JInternalFrame {
             PainelFuncLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PainelFuncLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addGroup(PainelFuncLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(PainelFuncLayout.createSequentialGroup()
                         .addComponent(Logo1)
@@ -464,7 +454,7 @@ public class CadastrarFuncionarios extends javax.swing.JInternalFrame {
                             .addComponent(jLabel13)
                             .addComponent(txtCtps, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(PainelEnd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(PainelFuncLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtNivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -590,7 +580,6 @@ public class CadastrarFuncionarios extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField txtBairro;
     private javax.swing.JTextField txtCep;

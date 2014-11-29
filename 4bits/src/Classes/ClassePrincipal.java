@@ -6,7 +6,7 @@
 
 package Classes;
 
-import imagens.fundos.ImagemPrincipal;
+
 import javax.swing.ImageIcon;
 import telas.atendimento.Ligações;
 import telas.atendimento.PesquisarClientes;

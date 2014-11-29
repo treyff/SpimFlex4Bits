@@ -1,4 +1,5 @@
 package imagens.fundos;
+
 import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Insets;
@@ -14,8 +15,9 @@ public class ImagemPrincipal implements Border{
  
     public ImagemPrincipal(){
         try {
-            URL imagePath = new URL(getClass().getResource("C:\\Users\\felip_000\\Desktop\\background-artwork3.jpg").toString()); // Felipe aqui aonde esta Fundo.png fica a imagem...eu criei uma pasta chamada Imagens e coloquei tudo dentro do projeto 
+            URL imagePath = new URL(getClass().getResource("C:\\Users\\felip_000\\Documents\\GitHub\\SpimFlex4Bits\\4bits\\src\\imagens\\fundos\\fundo.png").toString()); // Felipe aqui aonde esta Fundo.png fica a imagem...eu criei uma pasta chamada Imagens e coloquei tudo dentro do projeto 
             fundo = ImageIO.read(imagePath);// A imagem que eu coloquei tem 1600x800 porque a tela ja esta abrindo assim, faz o teste ai e depois me fala.
+        
         } catch (IOException ex) {            
         }
     }

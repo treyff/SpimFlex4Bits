@@ -80,7 +80,6 @@ public class PesquisarClientes extends javax.swing.JInternalFrame {
         txtAltCel = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         txtAltEnd = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
         btnAlt = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
@@ -101,8 +100,11 @@ public class PesquisarClientes extends javax.swing.JInternalFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         setTitle("Pesquisar Clientes");
 
+        painelPesquisar.setBackground(new java.awt.Color(204, 255, 204));
+
         jLabel1.setText("Pesquisar: ");
 
+        tabela.setBackground(new java.awt.Color(204, 255, 204));
         tabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -126,12 +128,16 @@ public class PesquisarClientes extends javax.swing.JInternalFrame {
         });
         tabelaroll.setViewportView(tabela);
 
+        jButton1.setBackground(new java.awt.Color(102, 255, 102));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/pq.png"))); // NOI18N
         jButton1.setText("Pesquisar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
 
         jLabel2.setText("Nome: ");
 
@@ -172,8 +178,6 @@ public class PesquisarClientes extends javax.swing.JInternalFrame {
 
         txtAltEnd.setEnabled(false);
 
-        jButton2.setText("Ver Endereço");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -194,11 +198,8 @@ public class PesquisarClientes extends javax.swing.JInternalFrame {
                     .addComponent(txtAltSenha)
                     .addComponent(txtAltTel)
                     .addComponent(txtAltCel, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(txtAltEnd, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtAltEnd, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(198, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -225,9 +226,8 @@ public class PesquisarClientes extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(txtAltEnd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2))
-                .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(txtAltEnd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 2, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout PeinelAltLayout = new javax.swing.GroupLayout(PeinelAlt);
@@ -241,14 +241,18 @@ public class PesquisarClientes extends javax.swing.JInternalFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        btnAlt.setText("Visualizar/Alterar/Deletar Dados");
+        btnAlt.setBackground(new java.awt.Color(102, 255, 102));
+        btnAlt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/edit.png"))); // NOI18N
+        btnAlt.setText("Editar Dados");
         btnAlt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAltActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Copiar no Atendimento");
+        jButton3.setBackground(new java.awt.Color(102, 255, 102));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/paste.png"))); // NOI18N
+        jButton3.setText("Copiar Dados");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -268,7 +272,7 @@ public class PesquisarClientes extends javax.swing.JInternalFrame {
                         .addGroup(painelPesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnAlt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(tabelaroll, javax.swing.GroupLayout.DEFAULT_SIZE, 561, Short.MAX_VALUE)
+                    .addComponent(tabelaroll)
                     .addGroup(painelPesquisarLayout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -298,24 +302,18 @@ public class PesquisarClientes extends javax.swing.JInternalFrame {
                         .addComponent(jButton3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnAlt)))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(painelPesquisar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(painelPesquisar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(painelPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(painelPesquisar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -451,7 +449,6 @@ public class PesquisarClientes extends javax.swing.JInternalFrame {
         }
         
         
-        
     }//GEN-LAST:event_jButton3ActionPerformed
 
 
@@ -459,7 +456,6 @@ public class PesquisarClientes extends javax.swing.JInternalFrame {
     private javax.swing.JPanel PeinelAlt;
     private javax.swing.JButton btnAlt;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;

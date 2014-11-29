@@ -6,7 +6,9 @@
 
 package telas.atendimento;
 
+import Classes.ClassePrincipal;
 import utilitarios.Formato;
+import utilitarios.SimulaçãoMp3;
 
 /**
  *
@@ -14,11 +16,13 @@ import utilitarios.Formato;
  */
 public class Ligações extends javax.swing.JInternalFrame {
     Formato formato = new Formato();
+    SimulaçãoMp3 Mp3 = new SimulaçãoMp3();
     /**
      * Creates new form Ligações
      */
     public Ligações() {
         initComponents();
+       
     }
 
     /**
@@ -67,16 +71,20 @@ public class Ligações extends javax.swing.JInternalFrame {
         Tratativa = new javax.swing.JTextArea();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        btnFecha = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setMaximizable(true);
         setTitle("Atendimento");
         setPreferredSize(new java.awt.Dimension(980, 530));
 
-        AreaAtendimento.setBackground(new java.awt.Color(255, 255, 255));
+        AreaAtendimento.setBackground(new java.awt.Color(204, 255, 204));
 
-        MenuAtendimento.setBackground(new java.awt.Color(255, 255, 255));
+        MenuAtendimento.setBackground(new java.awt.Color(102, 255, 102));
+        MenuAtendimento.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         MenuAtendimento.setRollover(true);
 
+        Ligar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/Skype Phone Green.png"))); // NOI18N
         Ligar.setText("Iniciar Ligação");
         Ligar.setFocusable(false);
         Ligar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -89,14 +97,21 @@ public class Ligações extends javax.swing.JInternalFrame {
         });
         MenuAtendimento.add(Ligar);
 
+        Desligar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/Skype Phone Red.png"))); // NOI18N
         Desligar.setText("Encerrar Chamada");
         Desligar.setFocusable(false);
         Desligar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Desligar.setOpaque(false);
         Desligar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Desligar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DesligarActionPerformed(evt);
+            }
+        });
         MenuAtendimento.add(Desligar);
 
         DadosClientes.setBackground(new java.awt.Color(255, 255, 255));
+        DadosClientes.setOpaque(false);
 
         jLabel1.setText("Nome:");
 
@@ -107,6 +122,7 @@ public class Ligações extends javax.swing.JInternalFrame {
         jLabel4.setText("E-mail:");
 
         Endereços.setBackground(new java.awt.Color(255, 255, 255));
+        Endereços.setOpaque(false);
 
         jLabel6.setText("Rua:");
 
@@ -209,7 +225,7 @@ public class Ligações extends javax.swing.JInternalFrame {
                     .addGroup(DadosClientesLayout.createSequentialGroup()
                         .addGap(71, 71, 71)
                         .addComponent(jLabel12)
-                        .addGap(0, 363, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DadosClientesLayout.createSequentialGroup()
                         .addGroup(DadosClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(DadosClientesLayout.createSequentialGroup()
@@ -234,10 +250,10 @@ public class Ligações extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel15)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(0, 140, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(Endereços, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84))
+                .addContainerGap())
         );
         DadosClientesLayout.setVerticalGroup(
             DadosClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -277,40 +293,68 @@ public class Ligações extends javax.swing.JInternalFrame {
         );
 
         Pedidos.setBackground(new java.awt.Color(255, 255, 255));
+        Pedidos.setOpaque(false);
 
         Tratativa.setColumns(20);
         Tratativa.setRows(5);
         jScrollPane1.setViewportView(Tratativa);
 
+        jButton2.setBackground(new java.awt.Color(102, 255, 102));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/save.png"))); // NOI18N
         jButton2.setText("Salvar Tratativa");
 
+        jButton3.setBackground(new java.awt.Color(102, 255, 102));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/pedido.png"))); // NOI18N
         jButton3.setText("Pedidos");
+
+        btnFecha.setBackground(new java.awt.Color(102, 255, 102));
+        btnFecha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/delete.png"))); // NOI18N
+        btnFecha.setText("Fechar");
+        btnFecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFechaActionPerformed(evt);
+            }
+        });
+
+        jButton1.setBackground(new java.awt.Color(102, 255, 102));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/paste.png"))); // NOI18N
+        jButton1.setText("Colar Dados");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PedidosLayout = new javax.swing.GroupLayout(Pedidos);
         Pedidos.setLayout(PedidosLayout);
         PedidosLayout.setHorizontalGroup(
             PedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PedidosLayout.createSequentialGroup()
+                .addGap(78, 78, 78)
                 .addGroup(PedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PedidosLayout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 843, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PedidosLayout.createSequentialGroup()
-                        .addGap(291, 291, 291)
-                        .addComponent(jButton3)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(200, 200, 200)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jButton2)
+                        .addGap(105, 105, 105)
+                        .addComponent(btnFecha))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 785, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(468, Short.MAX_VALUE))
         );
         PedidosLayout.setVerticalGroup(
             PedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PedidosLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(PedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton3)
                     .addComponent(jButton2)
-                    .addComponent(jButton3))
-                .addGap(0, 10, Short.MAX_VALUE))
+                    .addComponent(btnFecha)
+                    .addComponent(jButton1))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout AreaAtendimentoLayout = new javax.swing.GroupLayout(AreaAtendimento);
@@ -319,16 +363,19 @@ public class Ligações extends javax.swing.JInternalFrame {
             AreaAtendimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(MenuAtendimento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(AreaAtendimentoLayout.createSequentialGroup()
-                .addGroup(AreaAtendimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(Pedidos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(DadosClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(DadosClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AreaAtendimentoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Pedidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         AreaAtendimentoLayout.setVerticalGroup(
             AreaAtendimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AreaAtendimentoLayout.createSequentialGroup()
-                .addComponent(MenuAtendimento, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(MenuAtendimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(DadosClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Pedidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -342,17 +389,14 @@ public class Ligações extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(2, 2, 2)
-                .addComponent(AreaAtendimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(AreaAtendimento)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(AreaAtendimento)
         );
 
-        setBounds(0, 0, 980, 467);
+        setBounds(0, 0, 943, 493);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCpfActionPerformed
@@ -360,47 +404,74 @@ public class Ligações extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtCpfActionPerformed
 
     private void LigarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LigarActionPerformed
-        // TODO add your handling code here:
+    Mp3.Play("C:\\Users\\felip_000\\Music\\Songr\\Arctic Monkeys - Brainstorm.mp3");        // TODO add your handling code here:
     }//GEN-LAST:event_LigarActionPerformed
+
+    private void DesligarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesligarActionPerformed
+    Mp3.close();        // TODO add your handling code here:
+    }//GEN-LAST:event_DesligarActionPerformed
+
+    private void btnFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFechaActionPerformed
+       hide();
+        
+    }//GEN-LAST:event_btnFechaActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        txtBairro.setText(ClassePrincipal.e.getBairro());
+        txtCel.setText(ClassePrincipal.c.getCel());
+        txtCep.setText(ClassePrincipal.e.getCep());
+        txtCidade.setText(ClassePrincipal.e.getCidade());
+        txtCnpj.setText("");
+        txtComp.setText(ClassePrincipal.e.getComplemento());
+        txtCpf.setText("");
+        txtEmail.setText(ClassePrincipal.c.getEmail());
+        txtNome.setText(ClassePrincipal.c.getNome());
+        txtNum.setText(ClassePrincipal.e.getNumero());
+        txtRua.setText(ClassePrincipal.e.getRua());
+        txtTel.setText(ClassePrincipal.c.getFone1());
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane AreaAtendimento;
-    private javax.swing.JPanel DadosClientes;
-    private javax.swing.JButton Desligar;
-    private javax.swing.JPanel Endereços;
-    private javax.swing.JButton Ligar;
-    private javax.swing.JToolBar MenuAtendimento;
-    private javax.swing.JPanel Pedidos;
-    private javax.swing.JTextArea Tratativa;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField txtBairro;
-    private javax.swing.JTextField txtCel;
-    private javax.swing.JTextField txtCep;
-    private javax.swing.JTextField txtCidade;
-    private javax.swing.JTextField txtCnpj;
-    private javax.swing.JTextField txtComp;
-    private javax.swing.JTextField txtCpf;
-    private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtNome;
-    private javax.swing.JTextField txtNum;
-    private javax.swing.JTextField txtRua;
-    private javax.swing.JTextField txtTel;
+    public javax.swing.JDesktopPane AreaAtendimento;
+    public javax.swing.JPanel DadosClientes;
+    public javax.swing.JButton Desligar;
+    public javax.swing.JPanel Endereços;
+    public javax.swing.JButton Ligar;
+    public javax.swing.JToolBar MenuAtendimento;
+    public javax.swing.JPanel Pedidos;
+    public javax.swing.JTextArea Tratativa;
+    public javax.swing.JButton btnFecha;
+    public javax.swing.JButton jButton1;
+    public javax.swing.JButton jButton2;
+    public javax.swing.JButton jButton3;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel10;
+    public javax.swing.JLabel jLabel11;
+    public javax.swing.JLabel jLabel12;
+    public javax.swing.JLabel jLabel13;
+    public javax.swing.JLabel jLabel14;
+    public javax.swing.JLabel jLabel15;
+    public javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel3;
+    public javax.swing.JLabel jLabel4;
+    public javax.swing.JLabel jLabel6;
+    public javax.swing.JLabel jLabel7;
+    public javax.swing.JLabel jLabel8;
+    public javax.swing.JLabel jLabel9;
+    public javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JTextField txtBairro;
+    public javax.swing.JTextField txtCel;
+    public javax.swing.JTextField txtCep;
+    public javax.swing.JTextField txtCidade;
+    public javax.swing.JTextField txtCnpj;
+    public javax.swing.JTextField txtComp;
+    public javax.swing.JTextField txtCpf;
+    public javax.swing.JTextField txtEmail;
+    public javax.swing.JTextField txtNome;
+    public javax.swing.JTextField txtNum;
+    public javax.swing.JTextField txtRua;
+    public javax.swing.JTextField txtTel;
     // End of variables declaration//GEN-END:variables
 }

@@ -10,6 +10,7 @@ import Classes.FuncionarioLogado;
 import com.towel.swing.img.JImagePanel;
 import imagens.fundos.BGDesktopPane;
 import imagens.fundos.ImagemPrincipal;
+
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -78,11 +79,9 @@ public class Principal extends javax.swing.JFrame {
 
     public Principal() {
         initComponents();
-         
-            
         
-        //AreaPrincipal.setBorder(new ImagemPrincipal());
-        //this.setExtendedState(Principal.MAXIMIZED_BOTH);
+         
+        
         AreaPrincipal.add(cadastrarCliente);
         AreaPrincipal.add(ligações);
         AreaPrincipal.add(pesquisarCliente);
@@ -108,8 +107,8 @@ public class Principal extends javax.swing.JFrame {
         GestCadastroFunc.setVisible(false);
         GestPesqFunc.setVisible(false);
         GestCrtlProdutos.setVisible(false);
-             
-             
+           
+           
     }
         
         FuncionarioLogado f = new FuncionarioLogado();
@@ -123,7 +122,13 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        PainelMenu = new javax.swing.JPanel();
+        pBoasVindas = new javax.swing.JPanel();
+        LbMensagem = new javax.swing.JLabel();
+        LinkNome = new javax.swing.JLabel();
+        AreaPrincipal = new javax.swing.JDesktopPane();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         MenuCargos = new javax.swing.JToolBar();
         jSeparator1 = new javax.swing.JToolBar.Separator();
         AtCadastrarCliente = new javax.swing.JButton();
@@ -137,11 +142,6 @@ public class Principal extends javax.swing.JFrame {
         GestCadastroFunc = new javax.swing.JButton();
         GestCrtlProdutos = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JToolBar.Separator();
-        pBoasVindas = new javax.swing.JPanel();
-        LbMensagem = new javax.swing.JLabel();
-        LinkNome = new javax.swing.JLabel();
-        AreaPrincipal = new javax.swing.JDesktopPane();
-        jPanel2 = new javax.swing.JPanel();
         Menu = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         mlogin = new javax.swing.JMenuItem();
@@ -153,145 +153,10 @@ public class Principal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Principal SpimFlex");
 
-        jPanel1.setBackground(new java.awt.Color(102, 255, 102));
-
-        PainelMenu.setBackground(new java.awt.Color(153, 255, 153));
-        PainelMenu.setAlignmentX(0.1F);
-        PainelMenu.setAlignmentY(0.1F);
-
-        MenuCargos.setBackground(new java.awt.Color(204, 255, 204));
-        MenuCargos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        MenuCargos.setRollover(true);
-        MenuCargos.setBorderPainted(false);
-        MenuCargos.setEnabled(false);
-        MenuCargos.setOpaque(false);
-        MenuCargos.add(jSeparator1);
-
-        AtCadastrarCliente.setBackground(new java.awt.Color(255, 255, 255));
-        AtCadastrarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/pessoa.png"))); // NOI18N
-        AtCadastrarCliente.setText("Cadastrar Clientes");
-        AtCadastrarCliente.setFocusable(false);
-        AtCadastrarCliente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        AtCadastrarCliente.setOpaque(false);
-        AtCadastrarCliente.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        AtCadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AtCadastrarClienteActionPerformed(evt);
-            }
-        });
-        MenuCargos.add(AtCadastrarCliente);
-
-        AtPesquisarClientes.setBackground(new java.awt.Color(255, 255, 255));
-        AtPesquisarClientes.setText("Pesquisar Clientes");
-        AtPesquisarClientes.setFocusable(false);
-        AtPesquisarClientes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        AtPesquisarClientes.setOpaque(false);
-        AtPesquisarClientes.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        AtPesquisarClientes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AtPesquisarClientesActionPerformed(evt);
-            }
-        });
-        MenuCargos.add(AtPesquisarClientes);
-
-        AtPesquisarProduto.setBackground(new java.awt.Color(255, 255, 255));
-        AtPesquisarProduto.setText("Pesquisar Produtos");
-        AtPesquisarProduto.setFocusable(false);
-        AtPesquisarProduto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        AtPesquisarProduto.setOpaque(false);
-        AtPesquisarProduto.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        AtPesquisarProduto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AtPesquisarProdutoActionPerformed(evt);
-            }
-        });
-        MenuCargos.add(AtPesquisarProduto);
-        MenuCargos.add(Separador2);
-
-        SupRelLigaçoes.setBackground(new java.awt.Color(255, 255, 255));
-        SupRelLigaçoes.setText("Relatório de Ligações");
-        SupRelLigaçoes.setFocusable(false);
-        SupRelLigaçoes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        SupRelLigaçoes.setOpaque(false);
-        SupRelLigaçoes.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        SupRelLigaçoes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SupRelLigaçoesActionPerformed(evt);
-            }
-        });
-        MenuCargos.add(SupRelLigaçoes);
-
-        SupAtendimento.setBackground(new java.awt.Color(255, 255, 255));
-        SupAtendimento.setText("Painel de Atendimento");
-        SupAtendimento.setFocusable(false);
-        SupAtendimento.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        SupAtendimento.setOpaque(false);
-        SupAtendimento.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        SupAtendimento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SupAtendimentoActionPerformed(evt);
-            }
-        });
-        MenuCargos.add(SupAtendimento);
-
-        GestPesqFunc.setBackground(new java.awt.Color(255, 255, 255));
-        GestPesqFunc.setText("Pesquisar Funcionario");
-        GestPesqFunc.setFocusable(false);
-        GestPesqFunc.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        GestPesqFunc.setOpaque(false);
-        GestPesqFunc.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        GestPesqFunc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GestPesqFuncActionPerformed(evt);
-            }
-        });
-        MenuCargos.add(GestPesqFunc);
-        MenuCargos.add(Separador3);
-
-        GestCadastroFunc.setBackground(new java.awt.Color(255, 255, 255));
-        GestCadastroFunc.setText("Cadastrar Funcionario");
-        GestCadastroFunc.setFocusable(false);
-        GestCadastroFunc.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        GestCadastroFunc.setOpaque(false);
-        GestCadastroFunc.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        GestCadastroFunc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GestCadastroFuncActionPerformed(evt);
-            }
-        });
-        MenuCargos.add(GestCadastroFunc);
-
-        GestCrtlProdutos.setBackground(new java.awt.Color(255, 255, 255));
-        GestCrtlProdutos.setText("Cadastrar Produtos");
-        GestCrtlProdutos.setFocusable(false);
-        GestCrtlProdutos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        GestCrtlProdutos.setOpaque(false);
-        GestCrtlProdutos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        GestCrtlProdutos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GestCrtlProdutosActionPerformed(evt);
-            }
-        });
-        MenuCargos.add(GestCrtlProdutos);
-        MenuCargos.add(jSeparator4);
-
-        javax.swing.GroupLayout PainelMenuLayout = new javax.swing.GroupLayout(PainelMenu);
-        PainelMenu.setLayout(PainelMenuLayout);
-        PainelMenuLayout.setHorizontalGroup(
-            PainelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PainelMenuLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(MenuCargos, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        PainelMenuLayout.setVerticalGroup(
-            PainelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PainelMenuLayout.createSequentialGroup()
-                .addComponent(MenuCargos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
 
         pBoasVindas.setBackground(new java.awt.Color(204, 255, 204));
+        pBoasVindas.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         LbMensagem.setText("     Bem Vindo a SpimFlex:");
 
@@ -310,7 +175,7 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(LbMensagem)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LinkNome)
-                .addGap(0, 699, Short.MAX_VALUE))
+                .addGap(0, 695, Short.MAX_VALUE))
         );
         pBoasVindasLayout.setVerticalGroup(
             pBoasVindasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -321,23 +186,176 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(LinkNome)))
         );
 
-        AreaPrincipal.setBackground(new java.awt.Color(204, 204, 204));
+        AreaPrincipal.setBackground(new java.awt.Color(255, 255, 255));
         AreaPrincipal.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(102, 255, 153), new java.awt.Color(102, 255, 153)));
-        AreaPrincipal.setOpaque(false);
+
+        jLayeredPane1.setBackground(new java.awt.Color(97, 167, 6));
+        jLayeredPane1.setOpaque(true);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundos/fundo.png"))); // NOI18N
+
+        jLabel3.setBackground(new java.awt.Color(196, 232, 102));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(196, 232, 102));
+        jLabel3.setText("Desenvolvido por 4bits IT Solutions.");
+
+        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
+        jLayeredPane1.setLayout(jLayeredPane1Layout);
+        jLayeredPane1Layout.setHorizontalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addContainerGap())
+            .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 729, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jLayeredPane1Layout.setVerticalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addContainerGap())
+        );
+        jLayeredPane1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout AreaPrincipalLayout = new javax.swing.GroupLayout(AreaPrincipal);
         AreaPrincipal.setLayout(AreaPrincipalLayout);
         AreaPrincipalLayout.setHorizontalGroup(
             AreaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 878, Short.MAX_VALUE)
+            .addComponent(jLayeredPane1)
         );
         AreaPrincipalLayout.setVerticalGroup(
             AreaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 364, Short.MAX_VALUE)
+            .addComponent(jLayeredPane1)
         );
+        AreaPrincipal.setLayer(jLayeredPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        jPanel2.setOpaque(false);
-        jPanel2.setLayout(null);
+        MenuCargos.setBackground(new java.awt.Color(102, 255, 102));
+        MenuCargos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        MenuCargos.setRollover(true);
+        MenuCargos.setEnabled(false);
+        MenuCargos.add(jSeparator1);
+
+        AtCadastrarCliente.setBackground(new java.awt.Color(255, 255, 255));
+        AtCadastrarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/CadastrarCliente.png"))); // NOI18N
+        AtCadastrarCliente.setText("Cadastrar Clientes");
+        AtCadastrarCliente.setFocusable(false);
+        AtCadastrarCliente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        AtCadastrarCliente.setOpaque(false);
+        AtCadastrarCliente.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        AtCadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AtCadastrarClienteActionPerformed(evt);
+            }
+        });
+        MenuCargos.add(AtCadastrarCliente);
+
+        AtPesquisarClientes.setBackground(new java.awt.Color(255, 255, 255));
+        AtPesquisarClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/PesquisarCliente.png"))); // NOI18N
+        AtPesquisarClientes.setText("Pesquisar Clientes");
+        AtPesquisarClientes.setFocusable(false);
+        AtPesquisarClientes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        AtPesquisarClientes.setOpaque(false);
+        AtPesquisarClientes.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        AtPesquisarClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AtPesquisarClientesActionPerformed(evt);
+            }
+        });
+        MenuCargos.add(AtPesquisarClientes);
+
+        AtPesquisarProduto.setBackground(new java.awt.Color(255, 255, 255));
+        AtPesquisarProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/PesquisarProduto.png"))); // NOI18N
+        AtPesquisarProduto.setText("Pesquisar Produtos");
+        AtPesquisarProduto.setFocusable(false);
+        AtPesquisarProduto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        AtPesquisarProduto.setOpaque(false);
+        AtPesquisarProduto.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        AtPesquisarProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AtPesquisarProdutoActionPerformed(evt);
+            }
+        });
+        MenuCargos.add(AtPesquisarProduto);
+        MenuCargos.add(Separador2);
+
+        SupRelLigaçoes.setBackground(new java.awt.Color(255, 255, 255));
+        SupRelLigaçoes.setIcon(new javax.swing.ImageIcon("C:\\Users\\felip_000\\Desktop\\4Bits\\Imagens\\265226931.png")); // NOI18N
+        SupRelLigaçoes.setText("Relatório de Ligações");
+        SupRelLigaçoes.setFocusable(false);
+        SupRelLigaçoes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SupRelLigaçoes.setOpaque(false);
+        SupRelLigaçoes.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        SupRelLigaçoes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SupRelLigaçoesActionPerformed(evt);
+            }
+        });
+        MenuCargos.add(SupRelLigaçoes);
+
+        SupAtendimento.setBackground(new java.awt.Color(255, 255, 255));
+        SupAtendimento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/Atend.png"))); // NOI18N
+        SupAtendimento.setText("Painel de Atendimento");
+        SupAtendimento.setFocusable(false);
+        SupAtendimento.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SupAtendimento.setOpaque(false);
+        SupAtendimento.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        SupAtendimento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SupAtendimentoActionPerformed(evt);
+            }
+        });
+        MenuCargos.add(SupAtendimento);
+
+        GestPesqFunc.setBackground(new java.awt.Color(255, 255, 255));
+        GestPesqFunc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/PesquisarFuncionario.png"))); // NOI18N
+        GestPesqFunc.setText("Pesquisar Funcionario");
+        GestPesqFunc.setFocusable(false);
+        GestPesqFunc.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        GestPesqFunc.setOpaque(false);
+        GestPesqFunc.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        GestPesqFunc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GestPesqFuncActionPerformed(evt);
+            }
+        });
+        MenuCargos.add(GestPesqFunc);
+        MenuCargos.add(Separador3);
+
+        GestCadastroFunc.setBackground(new java.awt.Color(255, 255, 255));
+        GestCadastroFunc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/CadastrarFuncionario.png"))); // NOI18N
+        GestCadastroFunc.setText("Cadastrar Funcionario");
+        GestCadastroFunc.setFocusable(false);
+        GestCadastroFunc.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        GestCadastroFunc.setOpaque(false);
+        GestCadastroFunc.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        GestCadastroFunc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GestCadastroFuncActionPerformed(evt);
+            }
+        });
+        MenuCargos.add(GestCadastroFunc);
+
+        GestCrtlProdutos.setBackground(new java.awt.Color(255, 255, 255));
+        GestCrtlProdutos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/CadastrarProduto.png"))); // NOI18N
+        GestCrtlProdutos.setText("Cadastrar Produtos");
+        GestCrtlProdutos.setFocusable(false);
+        GestCrtlProdutos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        GestCrtlProdutos.setOpaque(false);
+        GestCrtlProdutos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        GestCrtlProdutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GestCrtlProdutosActionPerformed(evt);
+            }
+        });
+        MenuCargos.add(GestCrtlProdutos);
+        MenuCargos.add(jSeparator4);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -347,29 +365,19 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PainelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(AreaPrincipal))
+                    .addComponent(AreaPrincipal)
+                    .addComponent(MenuCargos, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addGap(26, 26, 26)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 866, Short.MAX_VALUE)
-                    .addContainerGap()))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(pBoasVindas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(PainelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(MenuCargos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(AreaPrincipal)
-                .addGap(6, 6, 6))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addContainerGap(131, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap()))
+                .addContainerGap())
         );
 
         Menu.setBackground(new java.awt.Color(255, 255, 255));
@@ -502,14 +510,15 @@ public class Principal extends javax.swing.JFrame {
     public javax.swing.JLabel LinkNome;
     public javax.swing.JMenuBar Menu;
     public javax.swing.JToolBar MenuCargos;
-    public javax.swing.JPanel PainelMenu;
     public javax.swing.JToolBar.Separator Separador2;
     public javax.swing.JToolBar.Separator Separador3;
     public javax.swing.JButton SupAtendimento;
     public javax.swing.JButton SupRelLigaçoes;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel3;
+    public javax.swing.JLayeredPane jLayeredPane1;
     public javax.swing.JMenu jMenu3;
     public javax.swing.JPanel jPanel1;
-    public javax.swing.JPanel jPanel2;
     public javax.swing.JToolBar.Separator jSeparator1;
     public javax.swing.JToolBar.Separator jSeparator4;
     public javax.swing.JMenuItem mBlocoNotas;
